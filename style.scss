@@ -158,6 +158,10 @@ a {
     }
 }
 
+.container {
+    padding: 0 2rem;
+}
+
 .card {
     background-color: #FFFFFF;
     border-radius: 8px;
@@ -222,6 +226,10 @@ a {
 // Medias
 
 @media (max-width: 860px) {
+
+    body {
+        height: auto;
+    }
 
     .container {
         flex-direction: column;
