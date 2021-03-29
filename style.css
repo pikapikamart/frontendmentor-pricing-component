@@ -1,0 +1,247 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  background: url("images/bg-top.svg") no-repeat right top, url("images/bg-bottom.svg") no-repeat left bottom;
+  background-color: #f6f6fe;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  height: 850px;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 71px 0;
+}
+
+ul {
+  border-top: 1px solid rgba(179, 181, 198, 0.5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+ul li {
+  border-bottom: 1px solid rgba(179, 181, 198, 0.5);
+  padding: 18px 0;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ .price-check::before {
+  right: 28px;
+}
+
+a {
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+[data-label=annual],
+[data-label=monthly] {
+  cursor: pointer;
+}
+
+.head-1 {
+  color: #6d708d;
+  font-size: 2rem;
+}
+
+.head-2 {
+  color: #6d708d;
+  font-size: 18px;
+}
+
+.f-15 {
+  color: #b3b5c6;
+  font-size: 15px;
+}
+
+.card-top {
+  gap: 21px 0;
+  margin-bottom: 22px;
+}
+
+.dg-blue {
+  color: #494c5f;
+}
+
+.g-blue {
+  color: #6d708d;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex--a-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex--j-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex--j-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex--column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex--top-row {
+  gap: 40px 0;
+}
+
+.flex--toggle-gap {
+  gap: 0 24px;
+  margin-bottom: 4rem;
+}
+
+.price-check {
+  background-image: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+  border-radius: 24px;
+  height: 2rem;
+  position: relative;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  width: 56px;
+}
+
+.price-check:hover {
+  opacity: 0.5;
+}
+
+.price-check::before {
+  content: "";
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  height: 24px;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: right 0.3s ease;
+  transition: right 0.3s ease;
+  width: 24px;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 16px 16px rgba(211, 211, 211, 0.1);
+          box-shadow: 0 0 16px 16px rgba(211, 211, 211, 0.1);
+  height: 453px;
+  padding: 34px 31px 31px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 350px;
+          flex: 0 1 350px;
+}
+
+.middle {
+  background-image: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+  height: 501px;
+  padding: 58px 31px 55px;
+}
+
+.middle * {
+  color: white;
+}
+
+.middle .learn {
+  background-color: #FFFFFF;
+  color: #696fdd;
+}
+
+.middle .learn:hover {
+  border-color: #f6f6fe;
+  color: #FFFFFF;
+}
+
+.middle ul,
+.middle li {
+  border-color: #f6f6fe;
+}
+
+.price {
+  font-size: 68px;
+}
+
+.dollar {
+  font-size: 40px;
+  margin-right: 8px;
+}
+
+.learn {
+  background-color: #696fdd;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  color: #FFFFFF;
+  height: 44px;
+  letter-spacing: 1px;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  width: 100%;
+}
+
+.learn:hover {
+  background-color: transparent;
+  border-color: #b3b5c6;
+  color: #696fdd;
+}
+
+@media (max-width: 860px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2rem 0;
+  }
+  .card {
+    width: clamp(326px, 50%, 500px);
+  }
+  .middle {
+    height: 453px;
+    padding: 34px 31px 31px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

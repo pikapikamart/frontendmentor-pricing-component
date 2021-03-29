@@ -1,0 +1,239 @@
+@import "variables";
+
+
+// HTML Presets
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+body {
+    background: url("images/bg-top.svg") no-repeat right top,
+                url("images/bg-bottom.svg") no-repeat left bottom;
+    background-color: $vlg-blue;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    height: 850px;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 71px 0;
+}
+
+ul {
+    border-top: 1px solid rgba(179, 181, 198, 0.5);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+
+    li {
+        border-bottom: 1px solid rgba(179, 181, 198, 0.5);
+        padding: 18px 0;
+        width: 100%;
+    }
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    display: none;
+
+    &:checked ~ .price-check::before {
+        right: 28px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+// Custom Items
+[data-label=annual],
+[data-label=monthly] {
+    cursor: pointer;
+}
+
+.head-1 {
+    color: $g-blue;
+    font-size: 2rem;
+}
+
+.head-2 {
+    color: $g-blue;
+    font-size: 18px;
+}
+
+.f-15 {
+    color: $lg-blue;
+    font-size: 15px;
+}
+
+.card-top {
+    gap: 21px 0;
+    margin-bottom: 22px;
+}
+
+.dg-blue {
+    color: $dg-blue;
+}
+
+.g-blue {
+    color: $g-blue;
+}
+
+// Primary
+
+.flex {
+    display: flex;
+
+    // Alignment
+    &--a-center {
+        align-items: center;
+    }
+    // Justify
+
+    &--j-center {
+        justify-content: center;
+    }
+
+    &--j-between {
+        justify-content: space-between;
+    }
+
+    &--column {
+        flex-direction: column;
+    }
+
+    // Custom
+
+    &--top-row {
+        gap: 40px 0;
+    }
+
+    &--toggle-gap {
+        gap: 0 24px;
+        margin-bottom: 4rem;
+    }
+}
+
+.price-check {
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    border-radius: 24px;
+    height: 2rem;
+    position: relative;
+    transition: opacity 0.3s ease;
+    width: 56px;
+
+    &:hover {
+        opacity: 0.5;
+    }
+
+    &::before {
+        content: "";
+        background-color: #FFFFFF;
+        border-radius: 12px;
+        height: 24px;
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: right 0.3s ease;
+        width: 24px;
+    }
+}
+
+.card {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 0 16px 16px rgba(211, 211, 211, 0.1);
+    height: 453px;
+    padding: 34px 31px 31px;
+    flex: 0 1 350px;
+}
+
+.middle {
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    height: 501px;
+    padding: 58px 31px 55px;
+
+     * {
+        color: white ;
+    }
+
+    .learn {
+        background-color: #FFFFFF;
+        color: hsl(237, 63%, 64%);
+
+        &:hover {
+            border-color: $vlg-blue;
+            color: #FFFFFF;
+        }
+    }
+    
+    ul,
+    li {
+        border-color: $vlg-blue;
+    }
+}
+
+.price {
+    font-size: 68px;
+}
+
+.dollar {
+    font-size: 40px;
+    margin-right: 8px;
+}
+
+.learn {
+    background-color: hsl(237, 63%, 64%);
+    border-radius: 8px;
+    border: 1px solid transparent;
+    color: #FFFFFF;
+    height: 44px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease ;
+    width: 100%;
+
+    &:hover {
+        background-color: transparent;
+        border-color: $lg-blue;
+        color: hsl(237, 63%, 64%);
+    }
+}
+// Medias
+
+@media (max-width: 860px) {
+
+    .container {
+        flex-direction: column;
+        gap: 2rem 0;
+    }
+
+    .card {
+        width: clamp(326px, 50%, 500px);
+    }
+
+    .middle {
+        height: 453px;
+        padding: 34px 31px 31px;
+    }
+}
