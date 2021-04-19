@@ -69,6 +69,31 @@ a {
     cursor: pointer;
 }
 
+[name=pricing] {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+
+    &:first-of-type {
+        left: -2.5rem;
+
+        &:checked {
+
+            + label {
+                z-index: -1;
+
+                &::before {
+                    right: 2.6rem;
+                }
+            }
+        }
+    }
+
+    &:last-of-type {
+        right: -2.5rem;
+    }
+}
+
 .head-1 {
     color: $g-blue;
     font-size: 2rem;
@@ -127,8 +152,54 @@ a {
     }
 
     &--toggle-gap {
-        gap: 0 24px;
+        height: 2rem;
         margin-bottom: 4rem;
+        position: relative;
+
+        > label {
+
+            &:first-of-type {
+                padding-right: 5rem;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    background-color: #FFFFFF;
+                    border-radius: 50%;
+                    height: 1.5rem;
+                    transform: translateY(-19%);
+                    position: absolute;
+                    right: 1rem;
+                    transition: right 0.3s ease;
+                    width: 1.5rem;
+                    z-index: 1;
+                }
+
+                &::after {
+                    content: "";
+                    background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+                    border-radius: 1.5rem;
+                    height: 2rem;
+                    position: absolute;
+                    right: 0.8rem;
+                    transform: translateY(-25%);
+                    width: 3.5rem;
+                }
+            }
+
+            &:last-of-type {
+                margin-left: -5rem;
+                padding-left: 5rem;
+            }
+        }
+
+        &:focus-within {
+
+            label:first-of-type::after {
+                box-shadow: 0 0 1px 0.1rem #FFFFFF,
+                            0 0 1px 0.2rem #696fdd;
+            }
+        }
     }
 }
 

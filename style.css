@@ -65,6 +65,28 @@ a {
   cursor: pointer;
 }
 
+[name=pricing] {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+[name=pricing]:first-of-type {
+  left: -2.5rem;
+}
+
+[name=pricing]:first-of-type:checked + label {
+  z-index: -1;
+}
+
+[name=pricing]:first-of-type:checked + label::before {
+  right: 2.6rem;
+}
+
+[name=pricing]:last-of-type {
+  right: -2.5rem;
+}
+
 .head-1 {
   color: #6d708d;
   font-size: 2rem;
@@ -129,8 +151,52 @@ a {
 }
 
 .flex--toggle-gap {
-  gap: 0 24px;
+  height: 2rem;
   margin-bottom: 4rem;
+  position: relative;
+}
+
+.flex--toggle-gap > label:first-of-type {
+  padding-right: 5rem;
+  position: relative;
+}
+
+.flex--toggle-gap > label:first-of-type::before {
+  content: "";
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  height: 1.5rem;
+  -webkit-transform: translateY(-19%);
+          transform: translateY(-19%);
+  position: absolute;
+  right: 1rem;
+  -webkit-transition: right 0.3s ease;
+  transition: right 0.3s ease;
+  width: 1.5rem;
+  z-index: 1;
+}
+
+.flex--toggle-gap > label:first-of-type::after {
+  content: "";
+  background-image: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+  background-image: linear-gradient(to right, #a3a8f0, #696fdd);
+  border-radius: 1.5rem;
+  height: 2rem;
+  position: absolute;
+  right: 0.8rem;
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
+  width: 3.5rem;
+}
+
+.flex--toggle-gap > label:last-of-type {
+  margin-left: -5rem;
+  padding-left: 5rem;
+}
+
+.flex--toggle-gap:focus-within label:first-of-type::after {
+  -webkit-box-shadow: 0 0 1px 0.1rem #FFFFFF, 0 0 1px 0.2rem #696fdd;
+          box-shadow: 0 0 1px 0.1rem #FFFFFF, 0 0 1px 0.2rem #696fdd;
 }
 
 .price-check {

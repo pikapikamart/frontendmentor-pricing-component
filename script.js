@@ -1,27 +1,24 @@
-const annual = document.querySelector("[data-label=annual]");
-const monthly = document.querySelector("[data-label=monthly]");
+const annual = document.querySelector("#annual");
+const monthly = document.querySelector("#monthly");
 const priceTags = document.querySelectorAll(".price");
 const monthlyPrice = "19.99 24.99 39.99".split(" ");
 const annualPrice = "199.99 249.99 399.99".split(" ");
-const price = document.querySelector("#price");
+let priceFlag = true;
 
 
 annual.addEventListener("click", ()=>{
-    price.checked = true;
+    priceFlag = true;
     checkprice();
 });
 
 monthly.addEventListener("click", ()=>{
-    price.checked = false;
+    priceFlag = false;
     checkprice();
 });
 
-price.addEventListener("change", ()=>{
-    checkprice();
-});
 
 function checkprice() {
-    if(price.checked) {
+    if(priceFlag) {
         priceTags.forEach((item, index) =>{
             item.textContent = annualPrice[index];
         })
@@ -31,3 +28,5 @@ function checkprice() {
         })
     }
 }
+
+checkprice();
