@@ -69,10 +69,7 @@ a {
   opacity: 0;
   position: absolute;
   pointer-events: none;
-}
-
-[name=pricing]:first-of-type {
-  left: -2.5rem;
+  width: 4rem;
 }
 
 [name=pricing]:first-of-type:checked + label {
@@ -84,7 +81,7 @@ a {
 }
 
 [name=pricing]:last-of-type {
-  right: -2.5rem;
+  right: 0;
 }
 
 .head-1 {

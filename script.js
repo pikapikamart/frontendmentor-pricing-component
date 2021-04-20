@@ -1,6 +1,6 @@
 const annual = document.querySelector("#annual");
 const monthly = document.querySelector("#monthly");
-const priceTags = document.querySelectorAll(".price");
+const priceTags = document.querySelectorAll(".price--change");
 const monthlyPrice = "19.99 24.99 39.99".split(" ");
 const annualPrice = "199.99 249.99 399.99".split(" ");
 let priceFlag = true;
